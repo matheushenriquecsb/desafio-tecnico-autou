@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email Classifier</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <h2>Classificação de Emails</h2>
+        <p class="description">
+          Faça upload de um arquivo de email (.txt/.pdf) ou insira uma mensagem
+        </p>
+      </header>
+
+      <section class="form-section">
+        <form id="emailForm">
+          <label for="fileInput">Upload de Arquivo (.txt ou .pdf)</label>
+
+          <label class="custom-file-upload" id="dropArea">
+            Arraste o arquivo<br />
+            <span class="upload-icon">ou</span><br />
+            Clique para selecionar
+            <input type="file" id="fileInput" accept=".txt,.pdf" />
+          </label>
+
+          <div class="inputFile">
+            <span id="clearFile" title="Remover arquivo">🗑️</span>
+            <input
+              type="text"
+              id="fileName"
+              readonly
+              placeholder="Nenhum arquivo escolhido"
+            />
+            <span id="fileSize"></span>
+          </div>
+
+          <label for="emailText">Insira o texto do email</label>
+          <textarea
+            id="emailText"
+            rows="6"
+            placeholder="Cole o texto aqui..."
+          ></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </section>
+
+      <section id="loading">
+        <div class="spinner"></div>
+      </section>
+
+      <section id="results" style="display: none">
+        <h3>Resultados</h3>
+        <p><b>Categoria:</b> <span id="category"></span></p>
+        <p><b>Resposta Automática:</b></p>
+        <p id="reply"></p>
+      </section>
+    </main>
+
+    <script src="./static/js/script.js"></script>
+  </body>
+</html>
