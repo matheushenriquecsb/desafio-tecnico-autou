@@ -18,7 +18,7 @@ def classify_and_reply(text: str):
  
     category = result["labels"][0]
      
-    if category == "Produtivo":
+    if category.startswith("Produtivo"):
         reply = (
             "Olá, recebemos seu email e confirmamos o recebimento. "
             "Sua solicitação será analisada e tratada em breve."
